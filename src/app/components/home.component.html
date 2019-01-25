@@ -1,0 +1,44 @@
+<div class="container">
+
+  <p>Please scn your appointment card/ Enter your I.C. / Passport Number for issue of Queue Ticket</p>
+
+  <form [formGroup]="fGroup" (ngSubmit)="onSubmit(frm.value)" #frm = "ngForm">
+    <div class="row">
+      <div class="col-sm-2"></div>
+      <div class="col-sm-8">
+        <div class="form-group">
+          <input formControlName = "search" type="text" placeholder="Search by User ID" class="form-control" name="search">
+        </div>
+      </div>
+      <div class="col-sm-2"></div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4"></div>
+      <div class="col-sm-4">
+
+        <button class="btn btn-primary btn-block">Submit</button>
+      </div>
+      <div class="col-sm-4"></div>
+    </div>
+  </form>
+
+  <div class="row ">
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4"><br>
+      <div class="row">
+        <div class="col col-md-3"><button class="btn btn-lg btn-outline-primary btn-block"> English</button></div>
+        <div class="col col-md-3"><button class="btn btn-lg btn-outline-primary btn-block"> Chiness</button></div>
+        <div class="col col-md-3"><button class="btn btn-lg btn-outline-primary btn-block"> Malay</button></div>
+        <div class="col col-md-3"><button class="btn btn-lg btn-outline-primary btn-block"> Spanish</button></div>
+      </div>
+    </div>
+    <div class="col-lg-4"></div>
+  </div>
+
+  <div *ngIf = "lists" class="alert-success m-3 p-3">
+      {{lists.name}}
+  </div>
+
+
+
+</div>
