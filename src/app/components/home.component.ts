@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ServiceService } from '../services/service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -13,6 +14,7 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
+    private router: Router,
     private service: ServiceService
   ) { }
 
@@ -29,11 +31,13 @@ export class HomeComponent implements OnInit {
   }
 
   onSubmit(value){
-    this.service.querySearch(value.search).subscribe((res:any)=>{
-      this.lists = res;
-    },(err)=>{
-      console.log(err);
-    })
+    // this.service.querySearch(value.search).subscribe((res:any)=>{
+    //   this.lists = res;
+    // },(err)=>{
+    //   console.log(err);
+    // })
+    this.router.navigate(['q-dash'])
   }
 
 }
+ 

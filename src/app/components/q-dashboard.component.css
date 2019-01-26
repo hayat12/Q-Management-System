@@ -1,0 +1,10 @@
+.tr{
+    color:blue; cursor: pointer;
+    background-color: rgba(63, 135, 230, 0.404);
+}
+.tr:hover{
+    background-color: rgba(63, 135, 230, 0.945);
+}
+.tr:active{
+    background-color: rgba(63, 135, 230, 0.568);
+}
