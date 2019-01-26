@@ -3,8 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --port 3000",
-    "servej": "json-server --watch db.json --port 3004",
+    "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -21,6 +20,7 @@
     "@angular/platform-browser": "^6.1.0",
     "@angular/platform-browser-dynamic": "^6.1.0",
     "@angular/router": "^6.1.0",
+    "angular-cli-github-pages": "^0.2.0",
     "core-js": "^2.5.4",
     "json-server": "^0.14.2",
     "rxjs": "^6.0.0",
