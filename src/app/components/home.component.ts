@@ -49,5 +49,9 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['q-dash',data.id]);
   }
 
+  newUser(){
+    alert('please visit counter');
+  }
+
 }
  
