@@ -29,10 +29,14 @@
     <div class="col col-12 mt-1 px-md-1 mt-md-0 col-md-2 col-lg-4"></div>
   </div>
 
-  <div *ngIf="lists" class="alert-success m-3 p-3">
-    {{lists.name}}
+  <div *ngIf="lists && isMember" class="alert-success m-3 p-3">
+    {{lists.data.first_name}}  {{lists.data.last_name}} &nbsp; &nbsp; <img class="user-img" [src]="lists.data.avatar" alt="king">
+    <span (click)="queueBill(lists.data)" style="float:right; cursor: pointer;" class="badge badge-pill badge-primary p-2 mt-2">Print Queue</span>
   </div>
 
+  <div *ngIf="isNewUser" class="alert-danger m-3 p-3">
+    Please visit counter     <span (click)="queueBill(lists.data)" style="float:right; cursor: pointer;" class="badge badge-pill badge-danger p-2">Visit Now </span>
+  </div>
 
 
 </div>

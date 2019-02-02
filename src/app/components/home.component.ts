@@ -11,6 +11,8 @@ import { Router } from '@angular/router';
 export class HomeComponent implements OnInit {
   fGroup: FormGroup;
   lists:any = null;
+  isNewUser:boolean = false;
+  isMember:boolean = false;
 
   constructor(
     private fb: FormBuilder,
@@ -31,12 +33,20 @@ export class HomeComponent implements OnInit {
   }
 
   onSubmit(value){
-    // this.service.querySearch(value.search).subscribe((res:any)=>{
-    //   this.lists = res;
-    // },(err)=>{
-    //   console.log(err);
-    // })
-    this.router.navigate(['q-dash'])
+    this.service.querySearch(value.search).subscribe((res:any)=>{
+      this.lists = res;
+      this.isNewUser = false;
+      this.isMember = true;
+    },(err)=>{
+      console.log(err);
+      this.isMember = false;
+      this.isNewUser = true;
+    })
+  }
+  
+  queueBill(data){
+    console.log(data);
+    this.router.navigate(['q-dash',data.id]);
   }
 
 }

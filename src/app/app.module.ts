@@ -13,8 +13,9 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ServiceService } from './services/service.service';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { appRoute } from './ng-router';
+import { InterceptService } from './services/interceptor.service';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,13 @@ import { appRoute } from './ng-router';
     RouterModule.forRoot(appRoute) 
   ],
   providers: [
-    ServiceService
+    ServiceService,
+    InterceptService,
+      {
+        provide: HTTP_INTERCEPTORS,
+        useClass: InterceptService,
+        multi: true
+      }
   ],
   bootstrap: [AppComponent]
 })

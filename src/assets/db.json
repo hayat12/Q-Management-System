@@ -1,4 +1,26 @@
 {
+  "user":[
+    {
+      "id":1,
+      "Name": "King",
+      "Dec": "He is a smart student"
+    },
+    {
+      "id":2,
+      "Name": "King",
+      "Dec": "He is a smart student"
+    },
+    {
+      "id":3,
+      "Name": "King",
+      "Dec": "He is a smart student"
+    },
+    {
+      "id":4,
+      "Name": "King",
+      "Dec": "He is a smart student"
+    }
+  ],
   "posts": [
     {
       "id": 1,

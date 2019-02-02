@@ -29,7 +29,7 @@ export const appRoute:Routes = [
   component:PAppointmentComponent
 },
 {
-  path: 'q-dash',
+  path: 'q-dash/:id',
   component:QDashboardComponent
 },
 {
