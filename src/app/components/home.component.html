@@ -30,7 +30,7 @@
   </div>
 
   <div *ngIf="lists && isMember" class="alert-success m-3 p-3">
-    {{lists.data.first_name}}  {{lists.data.last_name}} &nbsp; &nbsp; <img class="user-img" [src]="lists.data.avatar" alt="king">
+    {{lists.data.first_name}}  {{lists.data.last_name}} &nbsp; &nbsp;  {{p_num[lists.data.id]}} &nbsp; &nbsp; <img class="user-img" [src]="lists.data.avatar" alt="king">
     <span (click)="queueBill(lists.data)" style="float:right; cursor: pointer;" class="badge badge-pill badge-primary p-2 mt-2">Print Queue</span>
   </div>
 
