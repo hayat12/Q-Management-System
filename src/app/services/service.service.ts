@@ -16,6 +16,7 @@ export class ServiceService {
    * JSON DB SERVE
    */
   baseUrl = `https://reqres.in/api`;
+  testAppURL: string = 'assets/test.json';
   listUserUrl: string = `${this.baseUrl}/users`;
   constructor(
     private http: HttpClient
@@ -27,5 +28,9 @@ export class ServiceService {
 
   queryGetQueUser(id):Observable<object>{
    return this.http.get(`${this.listUserUrl}/${id}`)
+  }
+
+  queryTest():Observable<Object>{
+    return this.http.get(this.testAppURL);
   }
 }

@@ -14,7 +14,7 @@
     <div class="row">
       <div class="col-2 col-md-4 col-md-4"></div>
       <div class="col-8 col-md-4 col-md-4">
-        <button class="btn btn-primary btn-block">Submit</button>
+        <button [disabled] = "!frm.valid" class="btn btn-primary btn-block">Submit</button>
       </div>
       <div class="col-2 col-md-4 col-md-4"></div>
     </div>
@@ -30,12 +30,17 @@
   </div>
 
   <div *ngIf="lists && isMember" class="alert-success m-3 p-3">
-    {{lists.data.first_name}}  {{lists.data.last_name}} &nbsp; &nbsp;  {{p_num[lists.data.id]}} &nbsp; &nbsp; <img class="user-img" [src]="lists.data.avatar" alt="king">
-    <span (click)="queueBill(lists.data)" style="float:right; cursor: pointer;" class="badge badge-pill badge-primary p-2 mt-2">Print Queue</span>
+      {{lists.patient.ptName}} &nbsp; &nbsp;  {{lists.patient.sch_ID}} &nbsp; &nbsp; 
+      <!-- <img class="user-img" [src]="lists.data.avatar" alt="king"> -->
+    <span (click)="queueBill(lists)" style="float:right; cursor: pointer;" class="badge badge-pill badge-primary p-2 mt-2">Print Queue</span>
   </div>
 
   <div *ngIf="isNewUser" class="alert-danger m-3 p-3">
     Please visit counter     <span (click)="newUser()" style="float:right; cursor: pointer;" class="badge badge-pill badge-danger p-2">Visit Now </span>
+  </div>
+
+  <div *ngIf="fGroup.invalid && fGroup.touched && fGroup.dirty" class="alert-danger m-3 p-3">
+    Invalid ID (Ex, ID: 1, 2, 3, 4)
   </div>
 
 
