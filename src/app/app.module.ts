@@ -16,6 +16,26 @@ import { ServiceService } from './services/service.service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { appRoute } from './ng-router';
 import { InterceptService } from './services/interceptor.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {NoopAnimationsModule} from '@angular/platform-browser/animations';
+
+import {MatButtonModule, MatCheckboxModule } from '@angular/material';
+import { IKeyboardLayouts, keyboardLayouts, MAT_KEYBOARD_LAYOUTS, MatKeyboardModule } from '@ngx-material-keyboard/core';
+
+const customLayouts: IKeyboardLayouts = {
+  ...keyboardLayouts,
+  'Tölles Läyout': {
+    'name': 'Awesome layout',
+    'keys': [
+      [
+        ['1', '!'],
+        ['2', '@'],
+        ['3', '#']
+      ]
+    ],
+    'lang': ['de-CH']
+  }
+};
 
 @NgModule({
   declarations: [
@@ -35,10 +55,16 @@ import { InterceptService } from './services/interceptor.service';
     FormsModule, 
     ReactiveFormsModule,
     HttpClientModule,
-    RouterModule.forRoot(appRoute) 
+    RouterModule.forRoot(appRoute),
+    BrowserAnimationsModule,
+    NoopAnimationsModule,
+    MatButtonModule, 
+    MatCheckboxModule,
+    MatKeyboardModule,
   ],
   providers: [
     ServiceService,
+    { provide: MAT_KEYBOARD_LAYOUTS, useValue: customLayouts },
     InterceptService,
       {
         provide: HTTP_INTERCEPTORS,

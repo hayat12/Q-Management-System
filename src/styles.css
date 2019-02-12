@@ -1,4 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+.mat-keyboard-wrapper[_ngcontent-c5]{
+    min-width: 100%!important;
+}
 html body{
     width: 100%;
     min-height: 100%;
@@ -17,3 +21,5 @@ html body{
 .page-footer{
     margin-top: 506px!important;
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
